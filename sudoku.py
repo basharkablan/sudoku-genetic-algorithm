@@ -1,5 +1,4 @@
 """ Solves a Sudoku puzzle using a genetic algorithm. This is an improved version of a piece of coursework produced by Christian Thomas Jacobs as part of the CS3M6 Evolutionary Computation module at the University of Reading.
-
 Copyright (c) 2009, 2017 Christian Thomas Jacobs
 """
 
@@ -91,7 +90,7 @@ class Population(object):
 class Candidate(object):
     """ A candidate solutions to the Sudoku puzzle. """
     def __init__(self):
-        self.values = numpy.zeros((Nd, Nd))
+        self.values = numpy.zeros((Nd, Nd), dtype=int)
         self.fitness = None
         return
 
@@ -486,4 +485,4 @@ s = Sudoku()
 s.load("puzzle_mild.txt")
 solution = s.solve()
 if(solution):
-    s.save("solution.txt", solution)
+	s.save("solution.txt", solution)
